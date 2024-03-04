@@ -8,15 +8,50 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FilmesApi5.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240221001337_CriandoTabelaDeFilme")]
-    partial class CriandoTabelaDeFilme
+    [Migration("20240304233656_CriandoTabelasCinemaEndereco")]
+    partial class CriandoTabelasCinemaEndereco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
-                .HasAnnotation("ProductVersion", "5.0.5");
+                .HasAnnotation("ProductVersion", "5.0.17");
+
+            modelBuilder.Entity("FilmesApi5.Models.Cinema", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cinemas");
+                });
+
+            modelBuilder.Entity("FilmesApi5.Models.Endereco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Bairro")
+                        .HasColumnType("text");
+
+                    b.Property<string>("Logradouro")
+                        .HasColumnType("text");
+
+                    b.Property<int>("Numero")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Enderecos");
+                });
 
             modelBuilder.Entity("FilmesApi5.Models.Filme", b =>
                 {

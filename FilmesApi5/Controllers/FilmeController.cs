@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using FilmesApi5.Data;
-using FilmesApi5.Data.Dtos;
+using FilmesApi5.Data.Dtos.Filme;
 using FilmesApi5.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -13,10 +13,10 @@ namespace FilmesApi5.Controllers
     [Route("[controller]")]
     public class FilmeController : ControllerBase
     {
-        private FilmeContext _context;
+        private Data.AppDbContext _context;
         private IMapper _mapper;
 
-        public FilmeController(FilmeContext context, IMapper mapper)
+        public FilmeController(Data.AppDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

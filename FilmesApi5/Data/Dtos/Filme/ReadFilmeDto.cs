@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace FilmesApi5.Data.Dtos
+namespace FilmesApi5.Data.Dtos.Filme
 {
     public class ReadFilmeDto
     {
