@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace FilmesApi5.Data.Dtos.Cinema
+namespace FilmesApi5.Data.Dtos
 {
     public class UpdateCinemaDto
     {

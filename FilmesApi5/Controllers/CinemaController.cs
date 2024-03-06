@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using FilmesApi5.Data;
-using FilmesApi5.Data.Dtos.Cinema;
-using FilmesApi5.Data.Dtos.Filme;
+using FilmesApi5.Data.Dtos;
 using FilmesApi5.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -49,6 +48,8 @@ namespace FilmesApi5.Controllers
             if (cinema != null)
             {
                 ReadCinemaDto cinemaDto = _mapper.Map<ReadCinemaDto>(cinema);
+                cinemaDto.HoraDaConsulta = DateTime.Now;
+                cinemaDto.Endereco = _context.Enderecos.FirstOrDefault(endereco => endereco.Id == cinema.EnderecoId);
 
                 return Ok(cinemaDto);
             }
