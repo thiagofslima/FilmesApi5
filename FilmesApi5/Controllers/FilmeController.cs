@@ -23,7 +23,7 @@ namespace FilmesApi5.Controllers
         }
 
         [HttpPost]
-        public IActionResult AdicionarFilme([FromBody] CreateFilmeDto filmeDto)
+        public IActionResult AdicionarFilme([FromBody] CreateSessaoDto filmeDto)
         {
             Filme filme = _mapper.Map<Filme>(filmeDto);
 

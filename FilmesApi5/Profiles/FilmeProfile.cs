@@ -8,7 +8,7 @@ namespace FilmesApi5.Profiles
     {
         public FilmeProfile()
         {
-            CreateMap<CreateFilmeDto, Filme>();
+            CreateMap<CreateSessaoDto, Filme>();
             CreateMap<Filme, ReadFilmeDto>();
             CreateMap<UpdateFilmeDto, Filme>();
         }
